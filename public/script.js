@@ -52,6 +52,10 @@ document.addEventListener('DOMContentLoaded', () => {
             'Contato/Suporte': [
                 'contato', 'telefone', 'email', 'whatsapp', 'falar com', 'atendimento',
                 'suporte', 'ajuda', 'como entrar em contato', 'canal de atendimento'
+            ],
+            'Produtos/Serviços': [
+                'Antecipação', 'Crédito pessoal', 'Crédito trabalhador', 
+                'seguro prestamista', 'seguro celular', 'restituição', 'vibe',
             ]
         };
         

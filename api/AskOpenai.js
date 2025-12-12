@@ -887,7 +887,6 @@ async function handleConversationAction(action, userEmail, message, baseResponse
 module.exports.getCacheStatus = getCacheStatus;
 module.exports.clearCache = clearCache;
 module.exports.syncLocalCache = syncLocalCache;
-// Função closeMongoConnection removida - MongoDB não é mais usado
 module.exports.syncJsonToGoogleSheets = syncJsonToGoogleSheets;
 module.exports.validateFAQData = validateFAQData;
 

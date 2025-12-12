@@ -44,7 +44,7 @@ Se houver erros, o servidor mostrará qual módulo está falhando ao carregar.
 
 ```
 📦 Carregando handlers da API...
-✅ ask-mongodb carregado
+✅ ask carregado
 ✅ ask carregado
 ...
 🚀 Servidor iniciado!

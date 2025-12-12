@@ -18,8 +18,6 @@ try {
   
   console.log('\n📦 Testando carregamento de handlers...');
   
-  const askMongoDBHandler = require('./api/ask-mongodb');
-  console.log('✅ ask-mongodb');
   
   const askHandler = require('./api/ask');
   console.log('✅ ask');

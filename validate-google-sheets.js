@@ -1,5 +1,5 @@
 // Script para validar estrutura da planilha Google Sheets
-// Substitui o sync-google-sheets-to-mongodb.js
+// Validação da estrutura da planilha Google Sheets
 
 const { google } = require('googleapis');
 

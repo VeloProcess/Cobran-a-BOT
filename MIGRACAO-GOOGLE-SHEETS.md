@@ -12,14 +12,12 @@ O sistema foi completamente migrado do MongoDB para Google Sheets como fonte ún
 
 ## 🔧 Arquivos Modificados
 
-### 1. **api/ask-mongodb.js**
-- ✅ Removida dependência do MongoDB
+### 1. **api/ask.js**
 - ✅ Implementada leitura direta do Google Sheets
 - ✅ Mantida toda lógica de busca e correspondências
 - ✅ Cache local mantido para performance
 
 ### 2. **api/AskOpenai.js**
-- ✅ Removida dependência do MongoDB
 - ✅ Implementada leitura direta do Google Sheets
 - ✅ Funções de sincronização adaptadas
 - ✅ Sistema de IA avançada mantido
@@ -102,11 +100,11 @@ O sistema agora lê diretamente da planilha Google Sheets. Qualquer alteração 
 
 ## 📈 Benefícios da Migração
 
-- ✅ **Simplicidade**: Não precisa mais manter MongoDB
+- ✅ **Simplicidade**: Sistema simplificado usando apenas Google Sheets
 - ✅ **Acessibilidade**: Dados editáveis diretamente no Google Sheets
 - ✅ **Colaboração**: Múltiplos usuários podem editar simultaneamente
 - ✅ **Versionamento**: Histórico de alterações no Google Sheets
-- ✅ **Custo**: Redução de custos (sem necessidade de MongoDB)
+- ✅ **Custo**: Redução de custos (sem necessidade de banco de dados externo)
 
 ## 🔍 Verificação
 

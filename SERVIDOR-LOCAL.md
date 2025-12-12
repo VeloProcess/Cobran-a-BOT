@@ -35,7 +35,7 @@ node server-local.js
 ### APIs Disponíveis
 
 #### Busca e Perguntas
-- `GET /api/ask-mongodb` - Busca principal (Google Sheets)
+- `GET /api/ask` - Busca principal (Google Sheets)
 - `GET /api/ask` - Busca alternativa
 - `GET /api/ask-simple` - Busca simplificada
 - `GET /api/AskOpenai` - Busca (OpenAI desativado)

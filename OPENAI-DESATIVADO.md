@@ -22,8 +22,8 @@ A OpenAI foi completamente desativada do sistema. Agora o sistema usa **apenas b
 - ✅ Removido sistema de fallback de 3 níveis (agora apenas busca local)
 - ✅ Simplificado para usar apenas busca local
 
-### 3. **api/ask-mongodb.js**
-- ✅ Já estava usando apenas busca local (sem OpenAI)
+### 3. **api/ask.js**
+- ✅ Usa apenas busca local no Google Sheets (sem OpenAI)
 
 ## 🔍 Como Funciona Agora
 

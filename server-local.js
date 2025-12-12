@@ -27,14 +27,12 @@ app.use((req, res, next) => {
 });
 
 // Importar handlers da API com tratamento de erros
-let askMongoDBHandler, askHandler, askSimpleHandler, askOpenaiHandler;
+let askHandler, askSimpleHandler, askOpenaiHandler;
 let logQuestionHandler, feedbackHandler, adminHandler;
 let getNewsHandler, getProductStatusHandler;
 
 try {
   console.log('📦 Carregando handlers da API...');
-  askMongoDBHandler = require('./api/ask-mongodb');
-  console.log('✅ ask-mongodb carregado');
   
   askHandler = require('./api/ask');
   console.log('✅ ask carregado');
@@ -70,7 +68,6 @@ try {
 }
 
 // Rotas da API
-app.get('/api/ask-mongodb', askMongoDBHandler);
 app.get('/api/ask', askHandler);
 app.get('/api/ask-simple', askSimpleHandler);
 app.get('/api/AskOpenai', askOpenaiHandler);
@@ -121,7 +118,6 @@ app.listen(PORT, () => {
   console.log(`🔧 Ambiente: ${process.env.NODE_ENV || 'development'}`);
   console.log('');
   console.log('✅ APIs disponíveis:');
-  console.log(`   GET  /api/ask-mongodb`);
   console.log(`   GET  /api/ask`);
   console.log(`   GET  /api/ask-simple`);
   console.log(`   GET  /api/AskOpenai`);
