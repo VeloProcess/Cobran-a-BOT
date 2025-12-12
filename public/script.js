@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // ================== CONFIGURAÇÕES GLOBAIS ==================
     const DOMINIO_PERMITIDO = "@velotax.com.br";
-    const CLIENT_ID = '827325386401-ahi2f9ume9i7lc28lau7j4qlviv5d22k.apps.googleusercontent.com';
+    const CLIENT_ID = '230417725720-t7vj0fqvkhjaoc4fv4ki4u1ph2p9mqae.apps.googleusercontent.com';
 
     // ================== ELEMENTOS DO DOM ==================
     const identificacaoOverlay = document.getElementById('identificacao-overlay');
