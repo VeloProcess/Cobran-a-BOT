@@ -462,6 +462,73 @@ body.theme-rose #theme-selector {
     font-style: italic;
 }
 
+/* Formatação para mensagens estruturadas (JSON) */
+.structured-message {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaco-md);
+    margin: var(--espaco-sm) 0;
+}
+
+.structured-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 4px solid var(--cor-azul-medio);
+    border-radius: 8px;
+    padding: var(--espaco-md);
+    transition: all 0.3s ease;
+}
+
+.structured-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateX(4px);
+}
+
+.structured-item.even {
+    border-left-color: var(--cor-azul-medio);
+}
+
+.structured-item.odd {
+    border-left-color: var(--cor-azul-claro);
+}
+
+.structured-title {
+    font-weight: 600;
+    font-size: 1.05em;
+    color: var(--cor-azul-claro);
+    margin-bottom: var(--espaco-sm);
+    padding-bottom: var(--espaco-xs);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.structured-content {
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+    white-space: pre-wrap;
+}
+
+.structured-content br {
+    margin-bottom: 0.5em;
+}
+
+/* Ajustes para tema claro */
+body:not(.dark-theme):not(.theme-mint):not(.theme-rose) .structured-item {
+    background: rgba(0, 0, 0, 0.03);
+    border-left-color: var(--cor-azul-medio);
+}
+
+body:not(.dark-theme):not(.theme-mint):not(.theme-rose) .structured-item:hover {
+    background: rgba(0, 0, 0, 0.06);
+}
+
+body:not(.dark-theme):not(.theme-mint):not(.theme-rose) .structured-title {
+    color: var(--cor-azul-escuro);
+    border-bottom-color: rgba(0, 0, 0, 0.1);
+}
+
+body:not(.dark-theme):not(.theme-mint):not(.theme-rose) .structured-content {
+    color: var(--cor-texto);
+}
+
 .message a,
 .message-link {
     color: var(--cor-azul-medio);

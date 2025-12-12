@@ -264,7 +264,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const typingContainer = document.createElement('div');
             typingContainer.className = 'message-container bot typing-indicator';
             typingContainer.id = 'typing-indicator';
-            typingContainer.innerHTML = `<div class="avatar bot">🤖</div><div class="message-content"><div class="message"><div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div></div></div>`;
+            typingContainer.innerHTML = `<div class="avatar bot">🎅</div><div class="message-content"><div class="message"><div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div></div></div>`;
             chatBox.appendChild(typingContainer);
             chatBox.scrollTop = chatBox.scrollHeight;
         }
@@ -278,15 +278,47 @@ document.addEventListener('DOMContentLoaded', () => {
         // Função formatMessage removida - as respostas já vêm formatadas da planilha
         // Não aplicar nenhuma formatação adicional para não interferir na resposta
 
+        function formatStructuredMessage(message) {
+            // Tentar fazer parse do JSON
+            try {
+                const parsed = JSON.parse(message);
+                
+                // Verificar se é um array de objetos com title e content
+                if (Array.isArray(parsed) && parsed.length > 0 && parsed[0].title && parsed[0].content) {
+                    let html = '<div class="structured-message">';
+                    
+                    parsed.forEach((item, index) => {
+                        html += `<div class="structured-item ${index % 2 === 0 ? 'even' : 'odd'}">`;
+                        html += `<div class="structured-title">${item.title}</div>`;
+                        html += `<div class="structured-content">${item.content.replace(/\n/g, '<br>')}</div>`;
+                        html += `</div>`;
+                    });
+                    
+                    html += '</div>';
+                    return html;
+                }
+            } catch (e) {
+                // Não é JSON válido, retornar mensagem original
+            }
+            
+            // Se não for JSON estruturado, retornar mensagem original
+            return message;
+        }
+
         function addMessage(message, sender, options = {}) {
             const { sourceRow = null } = options;
             const messageContainer = document.createElement('div');
             messageContainer.classList.add('message-container', sender);
-            const avatarDiv = `<div class="avatar ${sender === 'user' ? 'user' : 'bot'}">${sender === 'user' ? '👤' : '🤖'}</div>`;
+            const avatarDiv = `<div class="avatar ${sender === 'user' ? 'user' : 'bot'}">${sender === 'user' ? '👤' : '🎅'}</div>`;
             
-            // Usar mensagem diretamente sem formatação (já vem formatada da planilha)
-            // Apenas converter quebras de linha para mensagens do usuário
-            const formattedMessage = sender === 'bot' ? message : message.replace(/\n/g, '<br>');
+            // Formatar mensagem: se for bot, tentar formatar JSON estruturado, senão usar diretamente
+            let formattedMessage;
+            if (sender === 'bot') {
+                formattedMessage = formatStructuredMessage(message);
+            } else {
+                formattedMessage = message.replace(/\n/g, '<br>');
+            }
+            
             const messageContentDiv = `<div class="message-content"><div class="message">${formattedMessage}</div></div>`;
             messageContainer.innerHTML = sender === 'user' ? messageContentDiv + avatarDiv : avatarDiv + messageContentDiv;
             chatBox.appendChild(messageContainer);
@@ -479,7 +511,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             // Adicionar container ao chat
                             const messageContainer = document.createElement('div');
                             messageContainer.classList.add('message-container', 'bot');
-                            const avatarDiv = `<div class="avatar bot">🤖</div>`;
+                            const avatarDiv = `<div class="avatar bot">🎅</div>`;
                             messageContainer.innerHTML = avatarDiv;
                             messageContainer.querySelector('.avatar').after(optionsContainer);
                             chatBox.appendChild(messageContainer);
