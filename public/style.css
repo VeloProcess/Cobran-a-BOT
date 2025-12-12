@@ -492,17 +492,14 @@ body.theme-rose #theme-selector {
 }
 
 .structured-title {
-    font-weight: 600;
+    font-weight: 700;
     font-size: 1.05em;
-    color: var(--cor-azul-claro);
     margin-bottom: var(--espaco-sm);
     padding-bottom: var(--espaco-xs);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .structured-content {
     line-height: 1.7;
-    color: rgba(255, 255, 255, 0.9);
     white-space: pre-wrap;
 }
 
@@ -510,23 +507,35 @@ body.theme-rose #theme-selector {
     margin-bottom: 0.5em;
 }
 
-/* Ajustes para tema claro */
-body:not(.dark-theme):not(.theme-mint):not(.theme-rose) .structured-item {
+/* Tema escuro: letras brancas */
+body.dark-theme .structured-title {
+    color: #FFFFFF;
+    font-weight: 700;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark-theme .structured-content {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Outros temas (claro, mint, rosa): letras pretas */
+body:not(.dark-theme) .structured-item {
     background: rgba(0, 0, 0, 0.03);
     border-left-color: var(--cor-azul-medio);
 }
 
-body:not(.dark-theme):not(.theme-mint):not(.theme-rose) .structured-item:hover {
+body:not(.dark-theme) .structured-item:hover {
     background: rgba(0, 0, 0, 0.06);
 }
 
-body:not(.dark-theme):not(.theme-mint):not(.theme-rose) .structured-title {
-    color: var(--cor-azul-escuro);
-    border-bottom-color: rgba(0, 0, 0, 0.1);
+body:not(.dark-theme) .structured-title {
+    color: #000000;
+    font-weight: 700;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-body:not(.dark-theme):not(.theme-mint):not(.theme-rose) .structured-content {
-    color: var(--cor-texto);
+body:not(.dark-theme) .structured-content {
+    color: #000000;
 }
 
 .message a,
