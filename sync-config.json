@@ -1,0 +1,19 @@
+{
+  "sync": {
+    "autoSync": true,
+    "syncInterval": 30000,
+    "watchFile": true,
+    "backupOnSync": true,
+    "validateData": true
+  },
+  "file": {
+    "path": "./faq-data.json",
+    "encoding": "utf8",
+    "createBackup": true
+  },
+  "notifications": {
+    "onSuccess": true,
+    "onError": true,
+    "onBackup": true
+  }
+}

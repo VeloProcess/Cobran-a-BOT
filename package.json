@@ -1,0 +1,26 @@
+{
+  "name": "chatbot-vercel",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server-local.js",
+    "dev": "node server-local.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "@huggingface/inference": "^4.7.1",
+    "axios": "^1.11.0",
+    "cosine-similarity": "^1.0.1",
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "form-data": "^4.0.0",
+    "googleapis": "^154.1.0",
+    "openai": "^5.20.1",
+    "whatwg-url": "^15.1.0"
+  }
+}
